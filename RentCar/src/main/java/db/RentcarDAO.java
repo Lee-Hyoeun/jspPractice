@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -45,4 +46,46 @@ public class RentcarDAO {
 //		}
 		
 
+	
+	//최신순 3대의 자동차를 리턴하는 메소드
+	public Vector<CarListBean> getSelectCar(){
+		
+		//리턴타입을 설정
+		Vector<CarListBean> v = new Vector<>();
+		getCon(); //커넥션이 연결되어야 쿼리를 실행 가능
+		
+		try {
+			String sql = "select * from rentcar order by no desc";
+			pstmt = con.prepareStatement(sql);
+			//쿼리 실행 후 결과를 Result타입으로 리턴
+			rs = pstmt.executeQuery();
+			int count=0;
+			while(rs.next()) {
+				
+				CarListBean bean = new CarListBean();
+    			bean.setNo(rs.getInt(1));
+    			bean.setName(rs.getString(2));
+    			bean.setCategory(rs.getInt(3));
+    			bean.setPrice(rs.getInt(4));
+    			bean.setUsepeople(rs.getInt(5));
+    			bean.setCompany(rs.getString(6));
+    			bean.setImg(rs.getString(7));
+    			bean.setInfo(rs.getString(8));
+
+    			//벡터의 빈클래스를 저장
+    			v.add(bean); //둘다 상관없는데 add가 더 최신 버전 v.addElement(bean);
+				count++;
+				if(count > 2) break; //반복문 빠져나가기
+				//3개만 벡터에 저장완료
+				
+			}
+			con.close(); //연결 닫기
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return v;
+	}
+	
+	
+	
 }

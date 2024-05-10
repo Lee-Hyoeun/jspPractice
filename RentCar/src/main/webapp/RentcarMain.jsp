@@ -5,7 +5,7 @@
 <body>
 <center>
 <%
-	String center = request.getParameter("Center");
+	String center = request.getParameter("center");
 	//처음 실행시에는 center값이 넘어오지 않아 아무것도 안들어오니깐 null처리
 	if(center == null){
 			center = "Center.jsp"; //디폴트 center값 부여
