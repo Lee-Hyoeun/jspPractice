@@ -38,21 +38,19 @@
 </table>
 
 <p>
-	<font size="4" color="gray"> <b> 차량 검색 하기</b> </font><br><br><br>
-	<form action="CarCategoryList.jsp" method="post">
+	<font size="4" color="gray"> <b> 차량 검색 하기</b></font> <br><br><br>
+	<form action="RentcarMain.jsp?center=CarCategoryList.jsp" method="post">
 	<font size="3" color="gray"><b> 차량 검색 하기 </b> </font>&nbsp;&nbsp;
-	<form action="CarCategoryList.jsp" method="post">
+
 	<select name="category">
 		<option value="1">소형 </option>
 		<option value="2">중형 </option>
 		<option value="3">대형 </option>		
 	</select> &nbsp;&nbsp;
-	<input type="submit" value="검색"> &nbsp;&nbsp;
-	<button onclick="location.href='CarAllList.jsp'"> 전체 검색</button>
+	<input type="submit" value="검색"> &nbsp;&nbsp;	
 	
 	</form>
-
-
+	<button onclick="location.href='RentcarMain.jsp?center=CarAllList.jsp'"> 전체 검색</button>
 </center>
 </body>
 </html>
