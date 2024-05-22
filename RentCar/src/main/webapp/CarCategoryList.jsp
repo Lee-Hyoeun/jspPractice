@@ -19,7 +19,7 @@
 <table width="1000" border="1" bordercolor="gray" >
 <tr heigth="100">
 	<td align="center" colspan="3">
-	<font size="6" color="gray"><%=temp %> 자동차 </font></td>
+	<font size="7" color="gray"><%=temp %> 자동차 </font></td>
 	</tr>
 <%
 	/* //카테고리 분류값을 받아옴
@@ -40,7 +40,7 @@
 	<tr height="220">			
 <% } %>
 		<td width="333" align="center">
-		<a href="RentcarMain.jsp?center=CarCategoryList.jsp?no=<%=bean.getNo()%>"> 
+		<a href="RentcarMain.jsp?center=CarReserveInfo.jsp?no=<%=bean.getNo()%>"> 
 		<img alt="" src="img/<%=bean.getImg() %>" width="300" height="200">
 		</a><p>
 		<font size="3" color="gray"> <b>차량명 : <%=bean.getName() %></b></font></td>
