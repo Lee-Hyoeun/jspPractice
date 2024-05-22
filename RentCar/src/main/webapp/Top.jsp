@@ -16,7 +16,9 @@
 	<table width="1000" bordercolor="white">
 		<tr height="70">
 			<td colspan="4">
+				<a href="RentcarMain.jsp" style="text-decoratopn:none">
 				<img src="./img/RENT.png" height="65" />
+				</a>
 			</td>
 			<td align="center" width="200">
 				<!-- 세션을 이용한 로그인 -->

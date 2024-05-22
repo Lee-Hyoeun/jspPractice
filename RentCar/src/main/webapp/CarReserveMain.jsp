@@ -21,6 +21,11 @@
 
 <!-- 뿌려주기 -->
 <table width="1000">
+	<tr heigth="100">
+	<td align="center" colspan="3">
+	<font size="6" color="gray"> 최신형 자동차 </font></td>
+	</tr>
+
 	<tr height="240">
 <% for(int i=0; i<v.size(); i++){
 	CarListBean bean = v.get(i);

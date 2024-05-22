@@ -1,33 +1,23 @@
-<%@page import="db.RentcarDAO"%>
 <%@page import="db.CarListBean"%>
 <%@page import="java.util.Vector"%>
+<%@page import="db.RentcarDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <body>
-<%
-	//카테고리 분류값을 받아옴
-	int category = Integer.parseInt(request.getParameter("category")); 
-	String temp="";
-	if(category==1) temp="소형";
-	else if(category==2) temp="중형";
-	else if(category==3) temp="대형";
-%>
 
 <center>
-<table width="1000" border="1" bordercolor="gray" >
+<table width="1000">
 <tr heigth="100">
 	<td align="center" colspan="3">
-	<font size="6" color="gray"><%=temp %> 자동차 </font></td>
+	<font size="6" color="gray"> 전체 렌트카 보기 </font></td>
 	</tr>
 <%
-	/* //카테고리 분류값을 받아옴
-	int category = Integer.parseInt(request.getParameter("category")); 
-	 */
+	
 	RentcarDAO rdao = new RentcarDAO();
-	//정확히 몇개 받아올지 몰라서 벡터로 받음
-	Vector<CarListBean> v = rdao.getCategoryCar(category);
+	//정확히 몇개 받아올지 몰라서 벡터로 받음 
+	Vector<CarListBean> v = rdao.getAllCar();
 	// 테이블에 반복문 3개씩 돌려서 받아오면 또 새로 받아올수 있게끔
 	//즉, tr을 3개씩 보여주고 다시 tr을 실행할 수 있도록 하는 변수 선언
 	int j=0;
@@ -53,5 +43,7 @@
 
 </table>
 </center>
+
+
 </body>
 </html>
