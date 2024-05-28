@@ -24,7 +24,7 @@
 %>
 
 <center>
-<form action="RentcarMain.jsp?center=CarOptionSelect.jsp">
+<form action="RentcarMain.jsp?center=CarOptionSelect.jsp" method="post">
 <table width="1000">
 	<tr height="100">
 		<td align="center" colspan="3">
